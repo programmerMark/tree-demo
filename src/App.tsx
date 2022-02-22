@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Tree from "./components/tree/Tree";
-import { ITreeNode } from "./components/tree/Tree/interface";
+import { ITreeNode, Tree } from "./components/Tree";
 
 function App() {
   const [treeData, setTreeData] = useState<ITreeNode[]>([

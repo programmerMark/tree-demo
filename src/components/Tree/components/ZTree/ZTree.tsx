@@ -85,7 +85,7 @@ export interface IZTreeRef {
   updateNode: (nodes: any[], checked: boolean) => void;
 }
 
-const ZTree: React.FunctionComponent<ITreeProps> = ({
+const Tree: React.FunctionComponent<ITreeProps> = ({
   className,
   treeNode,
   newNode,
@@ -219,10 +219,10 @@ const ZTree: React.FunctionComponent<ITreeProps> = ({
   );
 };
 
-const Tree = memo(
+const ZTree = memo(
   React.forwardRef((props: ITreeProps, ref) => (
     <ZTree {...props} zTreeRef={ref} />
   ))
 );
 
-export { Tree };
+export { ZTree };

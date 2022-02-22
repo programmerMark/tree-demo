@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from "react";
-import { Tree as ZTree, IZTreeRef } from "../ZTree";
+import { ZTree, IZTreeRef } from "./components/ZTree";
 import { ZTreeConfigs } from "./tools";
-import Style from "./index.module.scss";
+import "./Tree.scss";
 import { ITreeNode } from "./interface";
 
 interface ITreeProps {
@@ -23,7 +23,7 @@ interface ITreeProps {
   updateExpandNode: (id: string, open: boolean) => void;
 }
 
-const Tree: React.FC<ITreeProps> = (props) => {
+export const Tree: React.FC<ITreeProps> = (props) => {
   const {
     multipleChoice = true,
     nodes = [],
@@ -157,7 +157,7 @@ const Tree: React.FC<ITreeProps> = (props) => {
   };
 
   return (
-    <div className={Style.treeWrap}>
+    <div className="tree-wrap">
       {treeNodes && treeNodes.length > 0 && (
         <ZTree
           ref={treeRef}
@@ -174,5 +174,3 @@ const Tree: React.FC<ITreeProps> = (props) => {
     </div>
   );
 };
-
-export default Tree;

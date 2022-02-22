@@ -1,7 +1,12 @@
 {
-  "name": "tree-demo",
+  "name": "@programmermark/ztree",
   "version": "0.1.0",
-  "private": true,
+  "module": "./lib/esm/index.js",
+  "main": "./lib/cjs/index.js",
+  "files": [
+    "lib/"
+  ],
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
@@ -25,7 +30,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf lib",
+    "copy-files": "copy-files -e **/*.ts -r **/*.tsx -u 1 src/**/*.scss lib/esm/src",
+    "tsc": "npm run clean && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && npm run copy-files",
+    "prepare": "npm run tsc"
   },
   "eslintConfig": {
     "extends": [

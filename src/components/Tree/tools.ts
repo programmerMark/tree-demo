@@ -1,4 +1,4 @@
-import { ISetting } from "../ZTree/interface";
+import { ISetting } from "./components/ZTree/interface";
 
 export const ZTreeConfigs: ISetting = {
   check: {
